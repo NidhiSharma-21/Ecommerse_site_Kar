@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="productCard.css">
+    
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+    <style>
+
+@media (max-width: 667px) {
+  /* Styles for mobile */
+  main{     margin-top: 90px;
+            margin: 40px;
+
+        }
+        #section1{
+            display: block;
+            flex-direction: column;            
+            width: 100%;
+            gap: 5%;
+
+        }
+        #textcontainer{
+            width: 100%;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        #textcontainer h1{
+            font-size: 29px;
+            width: 100%;
+        } 
+        #imgcontainer{
+        width: 100%;
+        }
+        #imgcontainer img{
+        width: 100%;
+       }
+
+
+       .contact img {
+           display: none;
+        }
+  
+}
+
+
+@media (max-width: 1200px) {
+  /* Styles for mobile */
+  main{     margin-top: 90px;
+            margin: 40px;
+
+        }
+        #section1{
+            display: block;
+            flex-direction: column;            
+            width: 100%;
+            gap: 5%;
+
+        }
+        #textcontainer{
+            width: 100%;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        #textcontainer h1{
+            font-size: 29px;
+            width: 100%;
+        } 
+        #imgcontainer{
+        width: 100%;
+        }
+        #imgcontainer img{
+        width: 100%;
+       }
+  
+}
+
+#h1{
+    text-align: center;
+    margin-top: 30px;
+
+}
+
+
+
+
+.card-container {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    grid-auto-rows: max-content;
+    place-content: center;
+    place-items: center;
+    gap: 1rem;
+    padding: 3rem;
+}
+
+.card-container h2 {
+    grid-column: span 5;
+    font-size: 50px;
+    color: #333;
+    
+}
+
+.card {
+    /* height: 410px; */
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: box-shadow 0.5s;
+}
+
+.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 5px 20px;
+}
+
+.card-img img {
+    height: 275px;
+    width: 225px;
+}
+
+.card-content {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 15px;
+    background-color: #fff;
+    color: #333;
+    width: 220px;
+    transition: transform .5s;
+}
+
+.product-detail p {
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+.product-detail p:nth-child(1) {
+    font-weight: 600;
+    color: #666;
+}
+
+.product-detail span {
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+.discount-price {
+    font-weight: 600;
+}
+
+.real-price {
+    text-decoration: line-through;
+    color: #666;
+}
+
+.discount-percentage{
+    color: darkgreen;
+    font-weight: 600;
+}
+
+.card-content button {
+    align-self: center;
+    height: 40px;
+    width: 200px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #FC4F00;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.card-content button i {
+    margin-left: 10px;
+}
+
+.card:hover .card-content {
+    transform: translateY(-25px);
+}
+
+#heading{
+    margin-top: 10vh;
+    width: 100%;
+    text-align: center;
+
+}
+
+#heading h2{
+    font-size: 50px;
+}
+.log{
+    text-decoration: none;
+}
+.log:hover{
+    color:white;
+}
+
+    </style>
+
+
+    <title>All Products</title>
+</head>
+
+<body>
+   
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid fixed-top pt-2 pb-2" style="background-color: #ffff;">
+          <a class="navbar-brand" href="index.html"><img src="images/logo.png" height="25px" alt=""><span style="color: #fd8047;"></span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll pt" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="allProduct.html">Basic </a>
+              </li>
+             
+
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Women
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="allProduct.html">All Product</a></li>
+                  <li><a class="dropdown-item" href="dresses.html">Dresses</a></li>
+                  <li><a class="dropdown-item" href="womenJeans.html">Jeans</a></li>
+                  <li><a class="dropdown-item" href="tops.html">Tops</a></li>
+                </ul>
+              </li>
+             
+    
+              <li class="nav-item">
+                <a class="nav-link" href="kids.html">Kids</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Men
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="allProduct.html">All Product</a></li>
+                  <li><a class="dropdown-item" href="oversizedT.html">OverSized T-Shirt</a></li>
+                  <li><a class="dropdown-item" href="mensJeans.html">Jeans</a></li>
+                  <li><a class="dropdown-item" href="cargo.html">Cargos</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/frooti_hustler/index.html" onclick="show_contact()">Contact Us</a>
+              </li>
+              
+              
+            </ul>
+            
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-primary me-2" type="submit"><a href="/frooti_hustler/login.html" class="log">login</a></button>
+              <button class="btn btn-outline-primary me-2" type="submit"><a href="/frooti_hustler/mycart.html" class="log">Mycart</a></button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
+
+
+
+
+
+
+
+    <main>
+       <div id="heading"> <h2>TOPS</h2></div>
+        <div class="card-container">
+            
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/6.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Dresses</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/7.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Dresses</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/8.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Dresses</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/9.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Dresses</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/10.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Dresses</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/5.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Girls</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/12.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Girls</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/13.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Girls</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/14.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Girls</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/15.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Girls</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/16.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Tops</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/17.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Tops</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/18.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Tops</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/19.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Tops</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/20.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Tops</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/1.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Jeans</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/2.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Jeans</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/3.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Jeans</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/4.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Jeans</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="tops/5.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Jeans</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="./tops/1.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Boys</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="./tops/2.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Boys</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="./tops/3.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Boys</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="./tops/4.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Boys</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="./tops/5.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="product-detail">
+                        <p>Brand Name</p>
+                        <p>Boys</p>
+                        <span class="discount-price">₹999</span>
+                        <span class="real-price">₹1999</span>
+                        <span class="discount-percentage">50%</span>
+                    </div>
+                    <button id="card-content-btn">Add to Cart<i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    
+
+
+
+
+    <div class="container bottom bg-white">
+        <footer class="py-5">
+          <div class="row">
+
+
+
+            <div class="col-6 col-md-2 mb-3">
+                <h5>Women</h5>
+                <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="./dresses.html" class="nav-link p-0 text-body-secondary">Dresses</a></li>
+                  <li class="nav-item mb-2"><a href="./womenJeans.html" class="nav-link p-0 text-body-secondary">Jeans</a></li>
+                  <li class="nav-item mb-2"><a href="./tops.html" class="nav-link p-0 text-body-secondary">Tops</a></li>
+                </ul>
+              </div>
+
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Men</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="./oversizedT.html" class="nav-link p-0 text-body-secondary">Oversized T-shirt</a></li>
+                <li class="nav-item mb-2"><a href="./mensJeans.html" class="nav-link p-0 text-body-secondary">Jeans</a></li>
+                <li class="nav-item mb-2"><a href="./cargo.html" class="nav-link p-0 text-body-secondary">Cargos</a></li>
+              </ul>
+            </div>
+      
+           
+      
+            <div class="col-6 col-md-2 mb-3">
+             <a href="kids.html"  class="nav-link p-0 text-body-secondary"><h5>Kids</h5></a> 
+              <ul class="nav flex-column">
+                
+
+            </div>
+      
+            <div class="col-md-5 offset-md-1 mb-3">
+              <form>
+                <h5>Subscribe to our newsletter</h5>
+                <p>Monthly digest of what's new and exciting from us.</p>
+                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                  <label for="newsletter1" class="visually-hidden">Email address</label>
+                  <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                  <button class="btn btn-primary" type="button">Subscribe</button>
+                </div>
+              </form>
+            </div>
+          </div>
+      
+          <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+            <p>© 2023 Company, Inc. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+              <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+              <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+              <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+
+
+
+
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>   
+
+
+</body>
+
+</html>

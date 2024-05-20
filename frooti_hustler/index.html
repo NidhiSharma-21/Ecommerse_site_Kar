@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE KARK</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        main{
+            display: flex;
+            flex-direction: column;
+            margin: 80px;
+
+        }
+        #section1{
+            display: flex;
+            width: 100%;
+            gap: 5%;
+
+        }
+        #textcontainer{
+            width: 50%;
+           
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        #textcontainer h1{
+            font-size: 55px;
+        }
+        #imgcontainer {
+            
+            justify-content: flex-end;
+        }
+       #imgcontainer img{
+        width: 600px;
+       }
+
+        @media (max-width: 667px) {
+  /* Styles for mobile */
+  main{     margin-top: 90px;
+            margin: 40px;
+
+        }
+        #section1{
+            display: block;
+            flex-direction: column;            
+            width: 100%;
+            gap: 5%;
+
+        }
+        #textcontainer{
+            width: 100%;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        #textcontainer h1{
+            font-size: 29px;
+            width: 100%;
+        } 
+        #imgcontainer{
+        width: 100%;
+        }
+        #imgcontainer img{
+        width: 100%;
+       }
+
+
+       .contact img {
+           display: none;
+        }
+        button.log,
+button.cart {
+    background-color: white;
+    border: none;
+    text-decoration: none;
+    color: blue;
+    cursor: pointer;
+    outline: none;
+}
+
+button.log:hover,
+button.cart:hover {
+    color: white;
+    background-color: blue;
+}
+
+  
+}
+
+
+@media (max-width: 1200px) {
+  /* Styles for mobile */
+  main{     margin-top: 90px;
+            margin: 40px;
+
+        }
+        #section1{
+            display: block;
+            flex-direction: column;            
+            width: 100%;
+            gap: 5%;
+
+        }
+        #textcontainer{
+            width: 100%;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        #textcontainer h1{
+            font-size: 29px;
+            width: 100%;
+        } 
+        #imgcontainer{
+        width: 100%;
+        }
+        #imgcontainer img{
+        width: 100%;
+       }
+  
+}
+
+#h1{
+    text-align: center;
+    margin-top: 30px;
+
+}
+
+
+
+
+.card-container {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    grid-auto-rows: max-content;
+    place-content: center;
+    place-items: center;
+    gap: 1rem;
+    padding: 3rem;
+}
+
+.card-container h2 {
+    grid-column: span 5;
+    font-size: 50px;
+    color: #333;
+}
+
+.card {
+    /* height: 410px; */
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: box-shadow 0.5s;
+}
+
+.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 5px 20px;
+}
+
+.card-img img {
+    height: 275px;
+    width: 225px;
+}
+
+.card-content {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 15px;
+    background-color: #fff;
+    color: #333;
+    width: 220px;
+    transition: transform .5s;
+}
+
+.product-detail p {
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+.product-detail p:nth-child(1) {
+    font-weight: 600;
+    color: #666;
+}
+
+.product-detail span {
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+.discount-price {
+    font-weight: 600;
+}
+
+.real-price {
+    text-decoration: line-through;
+    color: #666;
+}
+
+.discount-percentage{
+    color: darkgreen;
+    font-weight: 600;
+}
+
+.card-content button {
+    align-self: center;
+    height: 40px;
+    width: 200px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #FC4F00;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.card-content button i {
+    margin-left: 10px;
+}
+
+.card:hover .card-content {
+    transform: translateY(-25px);
+}
+
+/* contact section */
+
+
+.contact {
+            height: 500px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 0 3rem;
+        }
+
+        .contact img {
+            width: 500px;
+            height: 350px;
+        }
+
+        .contact .divider {
+            height: 275px;
+            border-left: 2px solid rgba(43, 59, 74, .3);
+            margin-left: 50px;
+        }
+
+        .contact .form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 21em;
+            width: 20em;
+            padding: 2rem;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 15px;
+            transition: box-shadow 0.5s;
+        }
+
+        .contact .form:hover {
+            box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 20px;
+        }
+
+        .contact .form h3 {
+            color: #111;
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .contact .items input {
+            font-size: 1rem;
+            color: rgb(20, 19, 19);
+            width: 16rem;
+            height: 2.25rem;
+            padding: 10px 20px;
+            border-radius: 50px;
+            padding: 2.25px 15px;
+            border: 1px solid rgba(43, 59, 74, .3);
+        }
+
+        .contact .btn input {
+            font-size: 18px;
+            width: 18rem;
+            height: 2.65rem;
+            border-radius: 50px;
+            cursor: pointer;
+            color: white;
+            border: none;
+            background-color: #FC4F00;
+            transition: background-color .3s ease 0s;
+        }
+
+        .contact .btn input:hover {
+            background-color: rgb(200, 54, 0);
+        }
+
+        .log{
+            text-decoration: none;
+        }
+        .log:hover{
+            color:white;
+        }
+
+
+
+
+
+
+
+
+    </style>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid fixed-top pt-2 pb-2" style="background-color: #ffff;">
+          <a class="navbar-brand" href="index.html"><img src="images/logo.png" height="25px" alt=""><span style="color: #fd8047;"></span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll pt" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="allProduct.html">Basic </a>
+              </li>
+             
+
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Women
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="allProduct.html">All Product</a></li>
+                  <li><a class="dropdown-item" href="dresses.html">Dresses</a></li>
+                  <li><a class="dropdown-item" href="womenJeans.html">Jeans</a></li>
+                  <li><a class="dropdown-item" href="tops.html">Tops</a></li>
+                </ul>
+              </li>
+             
+    
+              <li class="nav-item">
+                <a class="nav-link" href="kids.html">Kids</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="contact" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Men
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="allProduct.html">All Product</a></li>
+                  <li><a class="dropdown-item" href="oversizedT.html">OverSized T-Shirt</a></li>
+                  <li><a class="dropdown-item" href="mensJeans.html">Jeans</a></li>
+                  <li><a class="dropdown-item" href="cargo.html">Cargos</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact" onclick="show_contact()">Contact Us</a>
+              </li>
+              
+              
+            </ul>
+            
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-primary me-2" type="submit"><a href="/frooti_hustler/login.html" class="log">login</a></button>
+              <button class="btn btn-outline-primary me-2" type="submit"><a href="/frooti_hustler/mycart.html" class="log">Mycart</a></button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
+    
+   <main>
+     <div id="section1" class="flex-row" >
+    <div id="textcontainer">
+        <h1><b>Where every thread whispers style, and every design tells a tale.</b></h1>
+        <p>Every t-shirt we craft undergoes a transformative journey where the customer plays the pivotal role. It's not about designs that gather dust in a museum; it's about creating pieces that resonate with life, laughter, and lasting memories.</p>
+    </div>
+    <div id="imgcontainer" >
+        <img src="./images/1.jpg" alt="" >
+    </div>
+</div>
+
+
+
+
+<section>
+    <h1 id="h1">Featured Products</h1>
+    <div class="card-container">
+        
+        <div class="card">
+            <div class="card-img">
+                <img src="./featured/1.jpg" alt="">
+            </div>
+            <div class="card-content">
+                <div class="product-detail">
+                    <p>Bonkers</p>
+                    <p>Oversized T-shirt</p>
+                    <span class="discount-price">₹999</span>
+                    <span class="real-price">₹1999</span>
+                    <span class="discount-percentage">50%</span>
+                </div>
+                <button id="card-content-btn">Add to Cart<i
+                        class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="./featured/2.jpg" alt="">
+            </div>
+            <div class="card-content">
+                <div class="product-detail">
+                    <p>Bonkers</p>
+                    <p>Oversized T-shirt</p>
+                    <span class="discount-price">₹999</span>
+                    <span class="real-price">₹1999</span>
+                    <span class="discount-percentage">50%</span>
+                </div>
+                <button id="card-content-btn">Add to Cart<i
+                        class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="featured/3.jpg" alt="">
+            </div>
+            <div class="card-content" id="card-hover">
+                <div class="product-detail">
+                    <p>Bonkers</p>
+                    <p>Oversized T-shirt</p>
+                    <span class="discount-price">₹999</span>
+                    <span class="real-price">₹1999</span>
+                    <span class="discount-percentage">50%</span>
+                </div>
+                <button id="card-content-btn">Add to Cart<i
+                        class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="featured/4.jpg" alt="">
+            </div>
+            <div class="card-content">
+                <div class="product-detail">
+                    <p>Bonkers</p>
+                    <p>Oversized T-shirt</p>
+                    <span class="discount-price">₹999</span>
+                    <span class="real-price">₹1999</span>
+                    <span class="discount-percentage">50%</span>
+                </div>
+                <button id="card-content-btn">Add to Cart<i
+                        class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="featured/5.jpg" alt="">
+            </div>
+            <div class="card-content">
+                <div class="product-detail">
+                    <p>Bonkers</p>
+                    <p>Oversized T-shirt</p>
+                    <span class="discount-price">₹999</span>
+                    <span class="real-price">₹1999</span>
+                    <span class="discount-percentage">50%</span>
+                </div>
+                <button id="card-content-btn">Add to Cart<i
+                        class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="contact" id="contact">
+        <form action="form.php" class="form">
+            <h3>Contact Us</h3>
+            <div class="items">
+                <input type="text" name="name" id="name" placeholder="Enter your Name" required>
+            </div>
+            <div class="items">
+                <input type="email" name="email" id="email" placeholder="Enter your Email" required>
+            </div>
+            <div class="items">
+                <input type="text" name="messgae" id="messgae" placeholder="Enter your Message" required>
+            </div>
+            <div class="btn">
+                <input type="button" value="Submit">
+            </div>
+        </form>
+        <div class="divider"></div>
+        <img src="images/11.jpg" alt="">
+    </div>
+</section>
+
+
+   </main>
+   
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>   
+
+</body>
+</html>
